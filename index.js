@@ -1,6 +1,9 @@
 const toggleBtn = document.querySelector(".main-list-item")
 const toggleList = document.querySelector(".toggle-list")
+toggleList.style.display = 'none'
+
 let toggleListDisplay = toggleList.style.display
+
 document.addEventListener("click", function (e) {
   if (e.target == toggleBtn) {
     if (toggleListDisplay != "block") {
