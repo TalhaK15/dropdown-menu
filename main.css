@@ -24,6 +24,7 @@ ul {
 
 .main-list-item {
   padding: 15px 0;
+  margin-right: 30px;
   width: 150px;
   text-align: center;
   border-radius: 6px;
@@ -35,6 +36,12 @@ ul {
   position: absolute;
   top: 48px;
   left: 41px;
+}
+
+.main-list-item:last-child > .toggle-list {
+  position: absolute;
+  top: 48px;
+  left: 221px;
 }
 
 .toggle-list-item {
