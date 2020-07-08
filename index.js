@@ -1,18 +1,22 @@
 const toggleBtn = document.querySelector(".main-list-item")
 const toggleList = document.querySelector(".toggle-list")
-toggleList.style.display = 'none'
+toggleList.style.display = "none"
 
-let toggleListDisplay = toggleList.style.display
-
-document.addEventListener("click", function (e) {
-  if (e.target == toggleBtn) {
-    if (toggleListDisplay != "block") {
-      toggleList.style.display = "block"
-    } else {
-      toggleList.style.display = "none"
+const dropdown = function (btn, menu) {
+  document.addEventListener("click", function (e) {
+    if (e.target == btn) {
+      if (menu.style.display != "block") {
+        menu.style.display = "block"
+      } else {
+        menu.style.display = "none"
+      }
+    } else if (
+      e.target.className !=
+      document.querySelectorAll(`.${menu.className} > li`)[0].className
+    ) {
+      menu.style.display = "none"
     }
-  } else if (e.target.className != "toggle-list-item") {
-    toggleList.style.display = "none"
-  }
-  toggleListDisplay = toggleList.style.display
-})
+  })
+}
+
+dropdown(toggleBtn, toggleList)
