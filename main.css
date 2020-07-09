@@ -73,6 +73,10 @@ ul {
   z-index: 999;
 }
 
+.dropdown-menu {
+  top: 90px;
+}
+
 .dropdown-menu-item,
 .dropdown-orderedlist-item {
   padding: 10px 30px;
