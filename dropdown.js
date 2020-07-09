@@ -9,7 +9,7 @@ export const dropdown = function (btn, menu) {
       }
     } else if (
       e.target.classList[0] !=
-      document.querySelectorAll(`.${menu.className} > li`)[0].classList[0]
+      document.querySelectorAll(`.${menu.className} > *`)[0].classList[0]
     ) {
       menu.style.display = "none"
     }

@@ -9,7 +9,7 @@ html {
 
 .container {
   width: 1200px;
-  padding: 30px 0 0 0;
+  padding: 30px 0;
   margin: 0 auto;
 }
 
@@ -36,6 +36,7 @@ ul {
   position: absolute;
   top: 48px;
   left: 41px;
+  z-index: 999;
 }
 
 .main-list-item:last-child > .toggle-list {
@@ -48,6 +49,57 @@ ul {
   padding: 10px 30px;
   background-color: rosybrown;
 }
-.renk {
+
+.cadetblue {
   background-color: cadetblue;
+}
+
+.toggle-btn {
+  width: 150px;
+  padding: 15px 0;
+  border-radius: 6px;
+  border: none;
+  background-color: chartreuse;
+  cursor: pointer;
+  outline: none;
+}
+
+.dropdown-menu,
+.dropdown-orderedlist {
+  position: absolute;
+  top: 62px;
+  left: 41px;
+  width: 68px;
+  z-index: 999;
+}
+
+.dropdown-menu-item,
+.dropdown-orderedlist-item {
+  padding: 10px 30px;
+  text-align: center;
+  background-color: chartreuse;
+  cursor: pointer;
+}
+
+.relative {
+  position: relative;
+}
+
+.toggle-a {
+  padding: 15px 25px;
+  background-color: darkseagreen;
+  border-radius: 6px;
+  text-decoration: none;
+  color: #000;
+}
+
+.dropdown-orderedlist {
+  position: absolute;
+  top: 62px;
+  left: 41px;
+  list-style: none;
+}
+
+.dropdown-orderedlist-item {
+  background-color: darkseagreen;
 }

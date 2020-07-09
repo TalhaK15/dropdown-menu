@@ -1,7 +1,13 @@
 import { dropdown } from "./dropdown.js"
 
-const toggleBtn = document.querySelectorAll(".main-list-item")
-const toggleList = document.querySelectorAll(".toggle-list")
+const toggleBtnUl = document.querySelectorAll(".main-list-item")
+const toggleListUl = document.querySelectorAll(".toggle-list")
+const toggleBtnBtn = document.querySelector(".toggle-btn")
+const toggleListDiv = document.querySelector(".dropdown-menu")
+const toggleBtnA = document.querySelector(".toggle-a")
+const toggleListOl = document.querySelector(".dropdown-orderedlist")
 
-dropdown(toggleBtn[0], toggleList[0])
-dropdown(toggleBtn[1], toggleList[1])
+dropdown(toggleBtnUl[0], toggleListUl[0])
+dropdown(toggleBtnUl[1], toggleListUl[1])
+dropdown(toggleBtnBtn, toggleListDiv)
+dropdown(toggleBtnA, toggleListOl)
