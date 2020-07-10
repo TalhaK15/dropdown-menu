@@ -12,9 +12,4 @@ dropdown(toggleBtnUl[1], toggleListUl[1])
 dropdown(toggleBtnBtn, toggleListDiv)
 dropdown(toggleBtnA, toggleListOl) */
 
-const toggleButtons = document.querySelectorAll("[data-toggle=dropdown]")
-
-toggleButtons.forEach((btn) => {
-  let menu = document.querySelector(`#${btn.id} + .dropdown`)
-  dropdown(btn, menu)
-})
+dropdown()
