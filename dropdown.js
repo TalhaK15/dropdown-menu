@@ -1,4 +1,6 @@
-export const dropdown = function (btn, menu, type) {
+export const dropdown = function (btn, menu) {
+  let type = btn.getAttribute("data-action") || "click"
+  console.log(type)
   menu.style.display = "none"
   if (type == "click") {
     document.addEventListener("click", function (e) {
@@ -16,6 +18,12 @@ export const dropdown = function (btn, menu, type) {
       }
     })
   } else if (type == "hover") {
+    btn.addEventListener("focus", function () {
+      menu.style.display = "block"
+    })
+    btn.addEventListener("blur", function () {
+      menu.style.display = "none"
+    })
     btn.addEventListener("mouseover", function () {
       menu.style.display = "block"
     })
