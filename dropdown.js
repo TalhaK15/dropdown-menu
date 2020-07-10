@@ -18,6 +18,9 @@ export const dropdown = function (btn, menu) {
       }
     })
   } else if (type == "hover") {
+
+    if (!btn.getAttribute('tabindex')) btn.setAttribute('tabindex', 0)
+
     btn.addEventListener("focus", function () {
       menu.style.display = "block"
     })
