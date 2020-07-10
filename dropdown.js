@@ -1,6 +1,5 @@
 export const dropdown = function (btn, menu) {
   let type = btn.getAttribute("data-action") || "click"
-  console.log(type)
   menu.style.display = "none"
   if (type == "click") {
     document.addEventListener("click", function (e) {
@@ -12,14 +11,13 @@ export const dropdown = function (btn, menu) {
         }
       } else if (
         e.target.classList[0] !=
-        document.querySelectorAll(`.${menu.className} > *`)[0].classList[0]
+        document.querySelectorAll(`.${menu.classList[0]} > *`)[0].classList[0]
       ) {
         menu.style.display = "none"
       }
     })
   } else if (type == "hover") {
-
-    if (!btn.getAttribute('tabindex')) btn.setAttribute('tabindex', 0)
+    if (!btn.getAttribute("tabindex")) btn.setAttribute("tabindex", 0)
 
     btn.addEventListener("focus", function () {
       menu.style.display = "block"

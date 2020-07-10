@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="main.css" />
   </head>
   <body>
-    <div class="container">
+    <!-- <div class="container">
       <ul class="main-list">
         <li class="main-list-item" data-action="hover">
           Click 1 (hover)
@@ -34,13 +34,18 @@
           </ul>
         </li>
       </ul>
-    </div>
+    </div> -->
 
     <div class="container relative">
-      <button class="toggle-btn" data-action="click">
-        Click 3 (Button + div) (click)
+      <button
+        class="toggle-btn"
+        id="toggle-button"
+        data-toggle="dropdown"
+        data-action="hover"
+      >
+        Click 3 (Button + div) (hover)
       </button>
-      <div class="dropdown-menu">
+      <div class="dropdown-menu dropdown">
         <div class="dropdown-menu-item">
           1a
         </div>
@@ -60,10 +65,10 @@
     </div>
 
     <div class="container relative">
-      <a href="#" class="toggle-a">
+      <a href="#" class="toggle-a" id="toggle-a" data-toggle="dropdown">
         Click 4 (a + ol) (click)
       </a>
-      <ol class="dropdown-orderedlist">
+      <ol class="dropdown-orderedlist dropdown">
         <li class="dropdown-orderedlist-item">
           a1
         </li>
