@@ -4,6 +4,17 @@ export const dropdown = function (btn, menu) {
   toggleButtons.forEach((btn) => {
     let menu = document.querySelector(`#${btn.id} + .dropdown`)
     let type = btn.getAttribute("data-action") || "click"
+    let positionData = btn.getAttribute("data-position")
+    btn.parentNode.style.position = "relative"
+    menu.style.position = "absolute"
+    menu.style.top = `${btn.offsetHeight}px`
+    if (positionData == "right") {
+      menu.style.left = `${btn.offsetWidth - menu.offsetWidth}px`
+    } else if (positionData == "left") {
+      menu.style.left = 0
+    } else if (positionData == "mid") {
+      menu.style.left = `${(btn.offsetWidth - menu.offsetWidth) / 2}px`
+    }
     menu.style.display = "none"
     if (type == "click") {
       document.addEventListener("click", function (e) {
