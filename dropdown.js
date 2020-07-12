@@ -7,13 +7,24 @@ export const dropdown = function (btn, menu) {
     let positionData = btn.getAttribute("data-position")
     btn.parentNode.style.position = "relative"
     menu.style.position = "absolute"
-    menu.style.top = `${btn.offsetHeight}px`
-    if (positionData == "right") {
-      menu.style.left = `${btn.offsetWidth - menu.offsetWidth}px`
-    } else if (positionData == "left") {
-      menu.style.left = 0
-    } else if (positionData == "mid") {
-      menu.style.left = `${(btn.offsetWidth - menu.offsetWidth) / 2}px`
+    if (positionData.startsWith("bottom-")) {
+      menu.style.top = `${btn.offsetHeight}px`
+      if (positionData == "bottom-right") {
+        menu.style.left = `${btn.offsetWidth - menu.offsetWidth}px`
+      } else if (positionData == "bottom-left") {
+        menu.style.left = 0
+      } else if (positionData == "bottom-mid") {
+        menu.style.left = `${(btn.offsetWidth - menu.offsetWidth) / 2}px`
+      }
+    } else if (positionData.startsWith("top-")) {
+      menu.style.top = `-${menu.offsetHeight}px`
+      if (positionData == "top-right") {
+        menu.style.left = `${btn.offsetWidth - menu.offsetWidth}px`
+      } else if (positionData == "top-left") {
+        menu.style.left = 0
+      } else if (positionData == "top-mid") {
+        menu.style.left = `${(btn.offsetWidth - menu.offsetWidth) / 2}px`
+      }
     }
     menu.style.display = "none"
     if (type == "click") {

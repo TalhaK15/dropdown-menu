@@ -14,10 +14,11 @@ html {
   height: 600px;
   display: flex;
   justify-content: space-between;
+  flex-wrap: wrap;
 }
 
-.cadetblue {
-  background-color: cadetblue;
+.dropdown-container {
+  margin: 0 20px;
 }
 
 .toggle-btn {
@@ -30,25 +31,11 @@ html {
   outline: none;
 }
 
-.dropdown-menu-item,
-.dropdown-orderedlist-item {
+.dropdown-menu-item {
   padding: 10px 30px;
   text-align: center;
   background-color: chartreuse;
   cursor: pointer;
 }
 
-.toggle-a {
-  background-color: darkseagreen;
-  border-radius: 6px;
-  text-decoration: none;
-  color: #000;
-}
-
-.dropdown-orderedlist {
-  list-style: none;
-}
-
-.dropdown-orderedlist-item {
-  background-color: darkseagreen;
-}
+/* ------------------ */
