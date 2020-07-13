@@ -26,37 +26,68 @@ export const dropdown = function (btn, menu) {
         menu.style.left = `${(btn.offsetWidth - menu.offsetWidth) / 2}px`
       }
     }
-    menu.style.display = "none"
+    menu.style.visibility = "hidden"
+    menu.style.opacity = 0
     if (type == "click") {
       document.addEventListener("click", function (e) {
         if (e.target == btn) {
-          if (menu.style.display != "block") {
-            menu.style.display = "block"
+          if (menu.style.opacity != 0) {
+            menu.style.visibility = "hidden"
+            menu.style.opacity = 0
           } else {
-            menu.style.display = "none"
+            menu.style.visibility = "visible"
+            menu.style.opacity = 1
           }
         } else if (
           e.target.classList[0] !=
           document.querySelectorAll(`.${menu.classList[0]} > *`)[0].classList[0]
         ) {
-          menu.style.display = "none"
+          menu.style.visibility = "hidden"
+          menu.style.opacity = 0
         }
       })
     } else if (type == "hover") {
-      if (!btn.getAttribute("tabindex")) btn.setAttribute("tabindex", 0)
-
-      btn.addEventListener("focus", function () {
-        menu.style.display = "block"
-      })
-      btn.addEventListener("blur", function () {
-        menu.style.display = "none"
-      })
       btn.addEventListener("mouseover", function () {
-        menu.style.display = "block"
+        menu.style.visibility = "visible"
+        menu.style.opacity = 1
       })
       btn.addEventListener("mouseleave", function () {
-        menu.style.display = "none"
+        menu.style.visibility = "hidden"
+        menu.style.opacity = 0
       })
     }
   })
 }
+
+/* menu.style.display = "none"
+if (type == "click") {
+  document.addEventListener("click", function (e) {
+    if (e.target == btn) {
+      if (menu.style.display != "block") {
+        menu.style.display = "block"
+      } else {
+        menu.style.display = "none"
+      }
+    } else if (
+      e.target.classList[0] !=
+      document.querySelectorAll(`.${menu.classList[0]} > *`)[0].classList[0]
+    ) {
+      menu.style.display = "none"
+    }
+  })
+} else if (type == "hover") {
+  if (!btn.getAttribute("tabindex")) btn.setAttribute("tabindex", 0)
+
+  btn.addEventListener("focus", function () {
+    menu.style.display = "block"
+  })
+  btn.addEventListener("blur", function () {
+    menu.style.display = "none"
+  })
+  btn.addEventListener("mouseover", function () {
+    menu.style.display = "block"
+  })
+  btn.addEventListener("mouseleave", function () {
+    menu.style.display = "none"
+  })
+} */
