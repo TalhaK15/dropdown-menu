@@ -1,3 +1,14 @@
+function isElementInViewport(element) {
+  element = element.getBoundingClientRect()
+  return (
+    element.top >= 0 &&
+    element.left >= 0 &&
+    element.bottom <=
+      (window.innerHeight || document.documentElement.clientHeight) &&
+    element.right <= (window.innerWidth || document.documentElement.clientWidth)
+  )
+}
+
 export const dropdown = function (btn, menu) {
   const toggleButtons = document.querySelectorAll("[data-toggle=dropdown]")
 
@@ -26,6 +37,29 @@ export const dropdown = function (btn, menu) {
         menu.style.left = `${(btn.offsetWidth - menu.offsetWidth) / 2}px`
       }
     }
+
+    if (!isElementInViewport(menu)) {
+      if (positionData.startsWith("bottom-")) {
+        menu.style.top = `-${menu.offsetHeight}px`
+        if (positionData == "bottom-right") {
+          menu.style.left = `${btn.offsetWidth - menu.offsetWidth}px`
+        } else if (positionData == "bottom-left") {
+          menu.style.left = 0
+        } else if (positionData == "bottom-mid") {
+          menu.style.left = `${(btn.offsetWidth - menu.offsetWidth) / 2}px`
+        }
+      } else if (positionData.startsWith("top-")) {
+        menu.style.top = `${btn.offsetHeight}px`
+        if (positionData == "top-right") {
+          menu.style.left = `${btn.offsetWidth - menu.offsetWidth}px`
+        } else if (positionData == "top-left") {
+          menu.style.left = 0
+        } else if (positionData == "top-mid") {
+          menu.style.left = `${(btn.offsetWidth - menu.offsetWidth) / 2}px`
+        }
+      }
+    }
+
     menu.style.visibility = "hidden"
     menu.style.opacity = 0
     if (type == "click") {
