@@ -62,13 +62,16 @@ export const dropdown = function (btn, menu) {
 
     menu.style.visibility = "hidden"
     menu.style.opacity = 0
+    let zindex = menu.style.zIndex
     if (type == "click") {
       document.addEventListener("click", function (e) {
         if (e.target == btn) {
           if (menu.style.opacity != 0) {
+            menu.style.zIndex = zindex
             menu.style.visibility = "hidden"
             menu.style.opacity = 0
           } else {
+            menu.style.zIndex = 999
             menu.style.visibility = "visible"
             menu.style.opacity = 1
           }
@@ -76,16 +79,19 @@ export const dropdown = function (btn, menu) {
           e.target.classList[0] !=
           document.querySelectorAll(`.${menu.classList[0]} > *`)[0].classList[0]
         ) {
+          menu.style.zIndex = zindex
           menu.style.visibility = "hidden"
           menu.style.opacity = 0
         }
       })
     } else if (type == "hover") {
       btn.addEventListener("mouseover", function () {
+        menu.style.zIndex = 999
         menu.style.visibility = "visible"
         menu.style.opacity = 1
       })
       btn.addEventListener("mouseleave", function () {
+        menu.style.zIndex = zindex
         menu.style.visibility = "hidden"
         menu.style.opacity = 0
       })
