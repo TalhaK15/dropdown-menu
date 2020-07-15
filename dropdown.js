@@ -38,27 +38,8 @@ export const dropdown = function (btn, menu) {
       }
     }
 
-    if (!isElementInViewport(menu)) {
-      if (positionData.startsWith("bottom-")) {
-        menu.style.top = `-${menu.offsetHeight}px`
-        if (positionData == "bottom-right") {
-          menu.style.left = `${btn.offsetWidth - menu.offsetWidth}px`
-        } else if (positionData == "bottom-left") {
-          menu.style.left = 0
-        } else if (positionData == "bottom-mid") {
-          menu.style.left = `${(btn.offsetWidth - menu.offsetWidth) / 2}px`
-        }
-      } else if (positionData.startsWith("top-")) {
-        menu.style.top = `${btn.offsetHeight}px`
-        if (positionData == "top-right") {
-          menu.style.left = `${btn.offsetWidth - menu.offsetWidth}px`
-        } else if (positionData == "top-left") {
-          menu.style.left = 0
-        } else if (positionData == "top-mid") {
-          menu.style.left = `${(btn.offsetWidth - menu.offsetWidth) / 2}px`
-        }
-      }
-    }
+    let menuHeight = menu.offsetHeight
+    let menuWidth = menu.offsetWidth
 
     menu.style.visibility = "hidden"
     menu.style.opacity = 0
@@ -71,6 +52,28 @@ export const dropdown = function (btn, menu) {
             menu.style.visibility = "hidden"
             menu.style.opacity = 0
           } else {
+            if (!isElementInViewport(menu)) {
+              if (positionData.startsWith("bottom-")) {
+                menu.style.top = `-${menuHeight}px`
+                if (positionData == "bottom-right") {
+                  menu.style.left = `${btn.offsetWidth - menuWidth}px`
+                } else if (positionData == "bottom-left") {
+                  menu.style.left = 0
+                } else if (positionData == "bottom-mid") {
+                  menu.style.left = `${(btn.offsetWidth - menuWidth) / 2}px`
+                }
+              } else if (positionData.startsWith("top-")) {
+                menu.style.top = `${btn.offsetHeight}px`
+                if (positionData == "top-right") {
+                  menu.style.left = `${btn.offsetWidth - menuWidth}px`
+                } else if (positionData == "top-left") {
+                  menu.style.left = 0
+                } else if (positionData == "top-mid") {
+                  menu.style.left = `${(btn.offsetWidth - menuWidth) / 2}px`
+                }
+              }
+            }
+
             menu.style.zIndex = 999
             menu.style.visibility = "visible"
             menu.style.opacity = 1
@@ -86,6 +89,28 @@ export const dropdown = function (btn, menu) {
       })
     } else if (type == "hover") {
       btn.addEventListener("mouseover", function () {
+        if (!isElementInViewport(menu)) {
+          if (positionData.startsWith("bottom-")) {
+            menu.style.top = `-${menuHeight}px`
+            if (positionData == "bottom-right") {
+              menu.style.left = `${btn.offsetWidth - menuWidth}px`
+            } else if (positionData == "bottom-left") {
+              menu.style.left = 0
+            } else if (positionData == "bottom-mid") {
+              menu.style.left = `${(btn.offsetWidth - menuWidth) / 2}px`
+            }
+          } else if (positionData.startsWith("top-")) {
+            menu.style.top = `${btn.offsetHeight}px`
+            if (positionData == "top-right") {
+              menu.style.left = `${btn.offsetWidth - menuWidth}px`
+            } else if (positionData == "top-left") {
+              menu.style.left = 0
+            } else if (positionData == "top-mid") {
+              menu.style.left = `${(btn.offsetWidth - menuWidth) / 2}px`
+            }
+          }
+        }
+
         menu.style.zIndex = 999
         menu.style.visibility = "visible"
         menu.style.opacity = 1
