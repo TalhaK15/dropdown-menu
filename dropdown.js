@@ -115,7 +115,7 @@ export const dropdown = function (btn, menu) {
         menu.style.visibility = "visible"
         menu.style.opacity = 1
       })
-      btn.addEventListener("mouseleave", function () {
+      btn.parentNode.addEventListener("mouseleave", function () {
         menu.style.zIndex = zindex
         menu.style.visibility = "hidden"
         menu.style.opacity = 0
