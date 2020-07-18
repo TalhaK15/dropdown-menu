@@ -24,12 +24,9 @@ or
 
 ## Usage
 
-```
-
+```html
 <div class="dropdown-container">
-  <button
-    id=""
-  >
+  <button id="">
     Button
   </button>
 
@@ -51,7 +48,6 @@ or
     </div>
   </div>
 </div>
-
 ```
 
 Every dropdown toggle button must have _'id'_ and _'data-toggle="dropdown"'_ parameter. The _'id'_ must be diffrent from other elements's id.
