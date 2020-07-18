@@ -15,7 +15,7 @@ export const dropdown = function (btn, menu) {
   toggleButtons.forEach((btn) => {
     let menu = document.querySelector(`#${btn.id} + .dropdown`)
     let type = btn.getAttribute("data-action") || "click"
-    let positionData = btn.getAttribute("data-position")
+    let positionData = btn.getAttribute("data-position") || "bottom-mid"
     btn.parentNode.style.position = "relative"
     menu.style.position = "absolute"
     if (positionData.startsWith("bottom-")) {
