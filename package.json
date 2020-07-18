@@ -1,0 +1,23 @@
+{
+  "name": "@talha15/dropdown-menu",
+  "version": "1.0.0",
+  "description": "Simple module for create dropdown menu",
+  "main": "dropdown.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TalhaK15/dropdown-menu.git"
+  },
+  "keywords": [
+    "dropdown",
+    "menu"
+  ],
+  "author": "Talha Karasu",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/TalhaK15/dropdown-menu/issues"
+  },
+  "homepage": "https://github.com/TalhaK15/dropdown-menu#readme"
+}
