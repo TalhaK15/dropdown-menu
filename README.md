@@ -7,7 +7,7 @@ This is a simple module for create dropdown menus.
 Using npm:
 
 ```shell
-$npm i @talha15/dropdown-menu
+$ npm i @talha15/dropdown-menu
 ```
 
 In a browser:
