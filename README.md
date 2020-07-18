@@ -25,8 +25,8 @@ or
 ## Usage
 
 ```html
-<div class="dropdown-container">
-  <button id="">
+<div>
+  <button id="1" data-toggle="dropdown">
     Button
   </button>
 
