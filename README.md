@@ -50,18 +50,18 @@ or
 </div>
 ```
 
-Every dropdown toggle button must have _'id'_ and _'data-toggle="dropdown"'_ parameter. The _'id'_ must be diffrent from other elements's id.
+Every dropdown toggle button must have _"**id**"_ and _"**data-toggle="dropdown"**"_ parameter. The _"**id**"_ must be diffrent from other elements's id.
 
 We have some opitional parameters too.
 
-'_data-action_' = _hover_ or _click_. As defaut click.
+"_**data-action**_" = _hover_ or _click_. As defaut click.
 
-'_data-position_' = _top-left_ or _top-mid_ or _top-right_ or _bottom-left_ or _bottom-mid_ or _bottom-right_. As defaut _bottom-mid_.
+"_**data-position**_" = _top-left_ or _top-mid_ or _top-right_ or _bottom-left_ or _bottom-mid_ or _bottom-right_. As defaut _bottom-mid_.
 
-And the menu must have _'dropdown'_ class. We have a fade animation as opitional. You can use it with adding _'fade'_ class to menu.
+And the menu must have _"**dropdown**"_ class. We have a fade animation as opitional. You can use it with adding _"**fade**"_ class to menu.
 
-Button or Menu can be any element. For example button can be a _a_ element or _div_ element.
+Button or Menu can be any element. For example button can be a _"**a**"_ element or _"**div**"_ element.
 
 There is something you should pay attention:
 
-The Button and Menu must be in the same parent element.
+The Button and Menu **must** be in the same parent element.
