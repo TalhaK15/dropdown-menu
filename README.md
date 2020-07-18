@@ -55,6 +55,7 @@ Every dropdown toggle button must have _'id'_ and _'data-toggle="dropdown"'_ par
 We have some opitional parameters too.
 
 _data-action_ = _hover_ or _click_
+
 _data-position_ = _top-left_ or _top-mid_ or _top-right_ or _bottom-left_ or _bottom-mid_ or _bottom-right_. As defaut _bottom-mid_
 
 And the menu must have _'dropdown'_ class. We have a fade animation as opitional. You can use it with adding _'fade'_ class to menu.
