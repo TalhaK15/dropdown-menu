@@ -16,30 +16,25 @@ export const dropdown = function (btn, menu) {
     let menu = document.querySelector(`#${btn.id} + .dropdown`)
     let type = btn.getAttribute("data-action") || "click"
     let positionData = btn.getAttribute("data-position") || "bottom-mid"
+    positionData = positionData.split("-")
     btn.parentNode.style.position = "relative"
     menu.style.position = "absolute"
-    if (positionData.startsWith("bottom-")) {
-      menu.style.top = `${btn.offsetHeight}px`
-      if (positionData == "bottom-right") {
-        menu.style.left = `${btn.offsetWidth - menu.offsetWidth}px`
-      } else if (positionData == "bottom-left") {
-        menu.style.left = 0
-      } else if (positionData == "bottom-mid") {
-        menu.style.left = `${(btn.offsetWidth - menu.offsetWidth) / 2}px`
-      }
-    } else if (positionData.startsWith("top-")) {
-      menu.style.top = `-${menu.offsetHeight}px`
-      if (positionData == "top-right") {
-        menu.style.left = `${btn.offsetWidth - menu.offsetWidth}px`
-      } else if (positionData == "top-left") {
-        menu.style.left = 0
-      } else if (positionData == "top-mid") {
-        menu.style.left = `${(btn.offsetWidth - menu.offsetWidth) / 2}px`
-      }
-    }
-
     let menuHeight = menu.offsetHeight
     let menuWidth = menu.offsetWidth
+
+    if (positionData[0] == "bottom") {
+      menu.style.top = `${btn.offsetHeight}px`
+    } else if (positionData[0] == "top") {
+      menu.style.top = `-${menuHeight}px`
+    }
+
+    if (positionData[1] == "right") {
+      menu.style.left = `${btn.offsetWidth - menuWidth}px`
+    } else if (positionData[1] == "left") {
+      menu.style.left = 0
+    } else if (positionData[1] == "mid") {
+      menu.style.left = `${(btn.offsetWidth - menuWidth) / 2}px`
+    }
 
     menu.style.visibility = "hidden"
     menu.style.opacity = 0
@@ -53,24 +48,10 @@ export const dropdown = function (btn, menu) {
             menu.style.opacity = 0
           } else {
             if (!isElementInViewport(menu)) {
-              if (positionData.startsWith("bottom-")) {
+              if (positionData[0] == "bottom") {
                 menu.style.top = `-${menuHeight}px`
-                if (positionData == "bottom-right") {
-                  menu.style.left = `${btn.offsetWidth - menuWidth}px`
-                } else if (positionData == "bottom-left") {
-                  menu.style.left = 0
-                } else if (positionData == "bottom-mid") {
-                  menu.style.left = `${(btn.offsetWidth - menuWidth) / 2}px`
-                }
-              } else if (positionData.startsWith("top-")) {
+              } else if (positionData[0] == "top") {
                 menu.style.top = `${btn.offsetHeight}px`
-                if (positionData == "top-right") {
-                  menu.style.left = `${btn.offsetWidth - menuWidth}px`
-                } else if (positionData == "top-left") {
-                  menu.style.left = 0
-                } else if (positionData == "top-mid") {
-                  menu.style.left = `${(btn.offsetWidth - menuWidth) / 2}px`
-                }
               }
             }
 
@@ -90,24 +71,10 @@ export const dropdown = function (btn, menu) {
     } else if (type == "hover") {
       btn.addEventListener("mouseover", function () {
         if (!isElementInViewport(menu)) {
-          if (positionData.startsWith("bottom-")) {
+          if (positionData[0] == "bottom") {
             menu.style.top = `-${menuHeight}px`
-            if (positionData == "bottom-right") {
-              menu.style.left = `${btn.offsetWidth - menuWidth}px`
-            } else if (positionData == "bottom-left") {
-              menu.style.left = 0
-            } else if (positionData == "bottom-mid") {
-              menu.style.left = `${(btn.offsetWidth - menuWidth) / 2}px`
-            }
-          } else if (positionData.startsWith("top-")) {
+          } else if (positionData[0] == "top") {
             menu.style.top = `${btn.offsetHeight}px`
-            if (positionData == "top-right") {
-              menu.style.left = `${btn.offsetWidth - menuWidth}px`
-            } else if (positionData == "top-left") {
-              menu.style.left = 0
-            } else if (positionData == "top-mid") {
-              menu.style.left = `${(btn.offsetWidth - menuWidth) / 2}px`
-            }
           }
         }
 
