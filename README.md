@@ -13,7 +13,7 @@ $ npm i @talha15/dropdown-menu
 In a browser:
 
 ```html
-<script src="lodash.js"></script>
+<script src="dropdown.js"></script>
 ```
 
 or
