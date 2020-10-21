@@ -1,5 +1,5 @@
 function isElementInViewport(e) {
-  element = e.getBoundingClientRect()
+  let element = e.getBoundingClientRect()
   return (
     element.top >= 0 &&
     element.left >= 0 &&
