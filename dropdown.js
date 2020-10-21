@@ -22,11 +22,15 @@ export const dropdown = function (btn, menu) {
     let menuHeight = menu.offsetHeight
     let menuWidth = menu.offsetWidth
 
-    if (position[0] == "bottom") {
-      menu.style.top = `${btn.offsetHeight}px`
-    } else if (position[0] == "top") {
-      menu.style.top = `-${menuHeight}px`
+    let setPosition = () => {
+      if (position[0] == "bottom") {
+        menu.style.top = `${btn.offsetHeight}px`
+      } else if (position[0] == "top") {
+        menu.style.top = `-${menuHeight}px`
+      }
     }
+
+    setPosition()
 
     if (position[1] == "right") {
       menu.style.left = `${btn.offsetWidth - menuWidth}px`
@@ -46,6 +50,7 @@ export const dropdown = function (btn, menu) {
             menu.style.zIndex = zindex
             menu.style.visibility = "hidden"
             menu.style.opacity = 0
+            setPosition()
           } else {
             if (!isElementInViewport(menu)) {
               if (position[0] == "bottom") {
@@ -66,6 +71,7 @@ export const dropdown = function (btn, menu) {
           menu.style.zIndex = zindex
           menu.style.visibility = "hidden"
           menu.style.opacity = 0
+          setPosition()
         }
       })
     } else if (type == "hover") {
@@ -86,6 +92,7 @@ export const dropdown = function (btn, menu) {
         menu.style.zIndex = zindex
         menu.style.visibility = "hidden"
         menu.style.opacity = 0
+        setPosition()
       })
     }
   })
