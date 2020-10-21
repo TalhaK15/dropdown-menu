@@ -98,6 +98,7 @@ class Dropdown extends HTMLElement {
           this.menu.style.zIndex = this.zindex
           this.menu.style.visibility = "hidden"
           this.menu.style.opacity = 0
+          setPosition(this)
         }
       })
     } else if (this.type == "hover") {
