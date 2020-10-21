@@ -1,15 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Dropdown Menu</title>
-    <link rel="stylesheet" href="main.css" />
-    <link rel="stylesheet" href="../dropdown.css" />
-  </head>
-  <body>
-    <div class="container">
-      <div class="dropdown-container">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dropdown Menu</title>
+  <link rel="stylesheet" href="main.css" />
+  <link rel="stylesheet" href="../dropdown.css" />
+</head>
+
+<body>
+  <div class="container">
+    <div class="dropdown-container">
         <button
           class="toggle-btn"
           id="toggle-1"
@@ -368,33 +370,34 @@
           </div>
         </div>
       </div>
+    <drop-down action="hover" position="top-right">
+      <button class="toggle-btn" slot="button">
+        HOVER ABCDEFG
+      </button>
 
-      <drop-down btnId="15" action="hover" position="bottom-left">
-        <button slot="button">
-          HOVER ABCDEFG
-        </button>
-
-        <div slot="menu" class="dropdown-menu">
-          <div class="dropdown-menu-item">
-            zz
-          </div>
-          <div class="dropdown-menu-item">
-            dsa
-          </div>
-          <div class="dropdown-menu-item">
-            3sc
-          </div>
-          <div class="dropdown-menu-item">
-            asd
-          </div>
-          <div class="dropdown-menu-item">
-            hgf
-          </div>
+      <div slot="menu" class="dropdown-menu">
+        <div class="dropdown-menu-item">
+          zz
         </div>
-      </drop-down>
-    </div>
+        <div class="dropdown-menu-item">
+          dsa
+        </div>
+        <div class="dropdown-menu-item">
+          3sc
+        </div>
+        <div class="dropdown-menu-item">
+          asd
+        </div>
+        <div class="dropdown-menu-item">
+          hgf
+        </div>
+      </div>
+    </drop-down>
+  </div>
 
-    <script src="../component/Dropdown.js"></script>
-    <script type="module" src="index.js"></script>
-  </body>
+
+  <script src="../component/Dropdown.js"></script>
+  <script type="module" src="index.js"></script>
+</body>
+
 </html>
