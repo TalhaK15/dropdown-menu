@@ -18,7 +18,7 @@ export const dropdown = function () {
     let type = btn.dataset.action || "click"
     let modal = btn.dataset.modal || "true"
 
-    let isSmallScreen = window.matchMedia("(max-width: 700px)").matches
+    let isSmallScreen = window.matchMedia("(max-width: 768px)").matches
 
     if (modal == "true" && isSmallScreen) {
       var modalContainer = document.createElement("div")
