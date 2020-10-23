@@ -26,7 +26,7 @@ if (!cssControl()) {
   var link = document.createElement("link")
   link.rel = "stylesheet"
   link.type = "text/css"
-  link.href = "https://unpkg.com/@talha15/dropdown-menu@1.1.0/dropdown.css"
+  link.href = "https://unpkg.com/@talha15/dropdown-menu@1.2.0/dropdown.css"
 
   head.appendChild(link)
 }
@@ -110,7 +110,7 @@ toggleButtons.forEach((btn) => {
         }
       } else if (
         e.target.classList[0] !=
-        document.querySelectorAll(`.${menu.classList[0]} > *`)[0].classList[0]
+        document.querySelectorAll(`.${menuClass} > *`)[0].classList[0]
       ) {
         if (modal == "true" && isSmallScreen) {
           if (modalContainer.style.display == "block") {
