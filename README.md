@@ -12,14 +12,14 @@ $ npm i @talha15/dropdown-menu
 
 and then
 
-```html
-<script src="node_modules/@talha15/dropdown-menu/dropdown.js"></script>
+```js
+import { Dropdown } from "@talha15/dropdown-menu"
 ```
 
 #### In a browser:
 
 ```html
-<script src="dropdown.js"></script>
+<script src="/path/to/dropdown.js"></script>
 ```
 
 or
@@ -40,7 +40,7 @@ opitional:
 <link
   rel="stylesheet"
   type="text/css"
-  href="https://unpkg.com/@talha15/dropdown-menu@1.2.0/dropdown.css"
+  href="https://unpkg.com/@talha15/dropdown-menu@1.2.2/dropdown.css"
 />
 ```
 
@@ -107,4 +107,4 @@ Button or Menu can be any element. For example button can be a _"**a**"_ element
 There are somethings you should pay attention:
 
 - The Button and Menu **must** be in the same parent element.
-- All of the menu items **must** have the same class.
+- All of the menu items's first class **must** be same.
