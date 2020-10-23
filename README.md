@@ -4,13 +4,19 @@ This is a simple module for create dropdown menus.
 
 ## Installation
 
-Using npm:
+#### Using npm:
 
 ```shell
 $ npm i @talha15/dropdown-menu
 ```
 
-In a browser:
+and then
+
+```html
+<script src="node_modules/@talha15/dropdown-menu/dropdown.js"></script>
+```
+
+#### In a browser:
 
 ```html
 <script src="dropdown.js"></script>
@@ -42,11 +48,11 @@ this automatically.
 
 ## Usage
 
-Basic:
+#### Basic:
 
 ```html
 <div>
-  <button id="1" data-toggle="menu-class">Button</button>
+  <button id="btn" data-toggle="menu-class">Button</button>
 
   <div class="menu-class">
     <div class="dropdown-item">1a</div>
@@ -58,12 +64,12 @@ Basic:
 </div>
 ```
 
-Advanced:
+#### Advanced:
 
 ```html
 <div>
   <button
-    id="1"
+    id="btn"
     data-toggle="menu-class"
     data-action="hover"
     data-modal="true"
@@ -81,6 +87,8 @@ Advanced:
   </div>
 </div>
 ```
+
+---
 
 Every dropdown toggle button must have _"**id**"_ and _"**data-toggle=""**"_ parameter. The _"**id**"_ must be unique. The _"**data-toggle**"_ must be equal to unique class of menu.
 
