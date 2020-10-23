@@ -26,26 +26,14 @@ or
 
 ```html
 <div>
-  <button id="1" data-toggle="dropdown">
-    Button
-  </button>
+  <button id="1" data-toggle="dropdown">Button</button>
 
   <div class="dropdown fade">
-    <div>
-      1a
-    </div>
-    <div>
-      2b
-    </div>
-    <div>
-      3c
-    </div>
-    <div>
-      4d
-    </div>
-    <div>
-      5e
-    </div>
+    <div>1a</div>
+    <div>2b</div>
+    <div>3c</div>
+    <div>4d</div>
+    <div>5e</div>
   </div>
 </div>
 ```
